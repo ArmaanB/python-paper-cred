@@ -6,7 +6,7 @@ with open(os.path.join(pwd, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
-    name="paper-cred",
+    name="paper_cred",
     version="0.0.0",
     description="PathCheck Verifiable Vaccination Credentials implementation",
     long_description=long_description,
@@ -14,11 +14,10 @@ setup(
     url="https://pathcheck.org",
     author="PathCheck foundation",
     license="MIT",
-    packages=["paper-cred"],
-    entry_points={
-        "console_scripts": ["paper-cred=paper-cred:main"],
-    },
+    packages=["paper_cred"],
+    install_requires=["pyzbar", "Pillow"],
     classifiers=[
+        "Development Status :: 2 - Pre-Alpha"
         "License :: OSI Approved :: MIT License",
     ],
 )
