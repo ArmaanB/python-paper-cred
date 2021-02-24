@@ -1,6 +1,5 @@
-from pyzbar.pyzbar import decode
-import json
+import pyzbar.pyzbar as pzybar
 
 
 def decode(image):
-    return json.load(decode(image)[0])
+    return pzybar.decode(image)[0].data
