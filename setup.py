@@ -17,7 +17,7 @@ setup(
     packages=["paper_cred"],
     install_requires=["pyzbar", "Pillow"],
     classifiers=[
-        "Development Status :: 2 - Pre-Alpha"
+        "Development Status :: 2 - Pre-Alpha",
         "License :: OSI Approved :: MIT License",
     ],
 )
