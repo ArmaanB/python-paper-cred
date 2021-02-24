@@ -2,4 +2,4 @@ import pyzbar.pyzbar as pzybar
 
 
 def decode(image):
-    return pzybar.decode(image)[0].data
+    return str(pzybar.decode(image)[0].data, "UTF-8")
