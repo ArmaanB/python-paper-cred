@@ -1,5 +1,6 @@
 from pyzbar.pyzbar import decode
+import json
 
 
-def qrconvert(image):
-    return decode(image)[0].data.decode()
+def decode(image):
+    return json.load(decode(image)[0])
