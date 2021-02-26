@@ -2,7 +2,7 @@
 
 import sys
 from PIL import Image
-from paper_cred import qrconvert
+from paper_cred import parse
 
 
 def main():
@@ -11,7 +11,7 @@ def main():
             "Please provide a path to the QR code. Examples are in the "
             "examples/qr directory."
         )
-    return qrconvert.decode(Image.open(sys.argv[1]))
+    return parse.parse_qr(Image.open(sys.argv[1]))
 
 
 if __name__ == "__main__":
