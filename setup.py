@@ -15,7 +15,7 @@ setup(
     author="PathCheck foundation",
     license="MIT",
     packages=["paper_cred"],
-    install_requires=["pyzbar", "Pillow"],
+    install_requires=["pyzbar"],
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
         "License :: OSI Approved :: MIT License",
