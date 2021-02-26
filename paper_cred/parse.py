@@ -1,15 +1,4 @@
-import ecdsa
 import pyzbar.pyzbar as pzybar
-
-
-def verify_sig(data):
-    vk = ecdsa.VerifyingKey.from_pem(open("./examples/public.key").read())
-    print(data["signature"])
-    print(data["payload"])
-    return vk.verify(
-        bytes(data["signature"], "utf-8"),
-        bytes(data["payload"], "utf-8"),
-    )
 
 
 def parse_uri(uri):
@@ -23,10 +12,7 @@ def parse_uri(uri):
         "payload": question[1:][0],
     }
 
-    if verify_sig(outp):
-        return outp
-    else:
-        return False
+    return outp
 
 
 def parse_qr(image):
