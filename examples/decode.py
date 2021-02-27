@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+"""
+Take a path to a QR code image as input, and print the decoded content.
+Requires Pillow.
+"""
 
 import sys
 from PIL import Image
