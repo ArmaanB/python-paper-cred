@@ -1,7 +1,7 @@
 import pyzbar.pyzbar as pzybar
 
 
-def parse_uri(uri):
+def decode_uri(uri):
     """
     Method to parse URI
 
@@ -30,6 +30,29 @@ def parse_uri(uri):
     return outp
 
 
+def encode_uri(inp):
+    """
+    Method to create URI
+
+    Parameters
+    ----------
+    inp : dict
+        A dict with type, version, signature, pubkey, and payload.
+
+    Returns
+    -------
+    str
+        A string of the input in URI format.
+
+    """
+    typ = inp["type"]
+    ver = inp["version"]
+    sig = inp["signature"]
+    pub = inp["pubkey"]
+    pay = inp["payload"]
+    return f"cred:{typ}:{ver}:{sig}:{pub}:{pay}"
+
+
 def parse_qr(image):
     """
     Method to parse QR code using pyzbar
@@ -46,4 +69,4 @@ def parse_qr(image):
         signature, pubkey, and payload.
 
     """
-    return parse_uri(str(pzybar.decode(image)[0].data, "UTF-8"))
+    return decode_uri(str(pzybar.decode(image)[0].data, "UTF-8"))
